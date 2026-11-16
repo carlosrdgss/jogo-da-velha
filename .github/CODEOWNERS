@@ -1,12 +1,11 @@
-# Revisores autom√°ticos por √°rea (PGC 2 e 5.2).
+# Revisores autom·ticos por ·rea (PGC 2 e 5.2).
 #
-# @carlosrdgss √© o Desenvolvedor L√≠der (dono do reposit√≥rio).
-# TODO (Aula 1, passo 3): depois de adicionar o par de revis√£o como colaborador,
-# acrescente o usu√°rio dele ao final das linhas abaixo, ex.: "@carlosrdgss @usuario-do-par".
-# Vale a √öLTIMA linha que casar com o arquivo.
+# @carlosrdgss È o Desenvolvedor LÌder (dono do repositÛrio).
+# @EduardoAlcalaa È o par de revis„o (colaborador com permiss„o de escrita).
+# Vale a ⁄LTIMA linha que casar com o arquivo.
 
-*                    @carlosrdgss
-/.github/            @carlosrdgss
-/scripts/            @carlosrdgss
-/docs/               @carlosrdgss
-package.json         @carlosrdgss
+*                    @carlosrdgss @EduardoAlcalaa
+/.github/            @carlosrdgss @EduardoAlcalaa
+/scripts/            @carlosrdgss @EduardoAlcalaa
+/docs/               @carlosrdgss @EduardoAlcalaa
+package.json         @carlosrdgss @EduardoAlcalaa

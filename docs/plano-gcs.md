@@ -5,7 +5,7 @@
 | **Projeto** | Jogo da Velha (HTML + JavaScript, roda no navegador) |
 | **Repositório** | https://github.com/carlosrdgss/jogo-da-velha |
 | **Desenvolvedor Líder** | Carlos (@carlosrdgss) |
-| **Par de revisão** | @USUARIO-DO-PAR *(preencher)* |
+| **Par de revisão** | @EduardoAlcalaa |
 | **Disciplina** | Gerência de Configuração de Software — Católica SC |
 | **Versão do plano** | 1.0 |
 
@@ -23,7 +23,7 @@ repositório. Enfoque DevOps: integração e entrega contínuas (CI/CD) via GitH
 | Papel | Quem | Responsabilidades |
 |---|---|---|
 | Desenvolvedor Líder | @carlosrdgss | Mantém o repositório e este plano; revisor obrigatório do ambiente `production`; decide releases |
-| Par de revisão | @USUARIO-DO-PAR | Colaborador com permissão de escrita; revisa e aprova todo PR do Líder (e vice-versa no projeto dele) |
+| Par de revisão | @EduardoAlcalaa | Colaborador com permissão de escrita; revisa e aprova todo PR do Líder (e vice-versa no projeto dele) |
 | Pipeline (GitHub Actions) | automático | Executa lint, testes, cobertura, SCA e build a cada PR |
 
 Regra: ninguém aprova o próprio PR (o GitHub impede) — por isso existe o par de revisão.
