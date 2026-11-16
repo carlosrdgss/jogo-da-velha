@@ -1,0 +1,62 @@
+# Integração Contínua — PGC seção 5
+# Roda em todo Pull Request para a main. Marque como obrigatório SOMENTE "ci-ok" e "titulo-pr".
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  jogo:
+    name: jogo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependências (exatamente as do lockfile)
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Testes + quality gate de cobertura (>= 60%)
+        run: npm run test:coverage
+      - name: Análise de dependências (SCA) — bloqueia vulnerabilidade crítica
+        run: npm audit --omit=dev --audit-level=critical
+      - name: Build
+        run: npm run build
+      - name: Publicar build para revisão
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-pr-${{ github.event.pull_request.number || 'manual' }}
+          path: dist/
+          retention-days: 7
+
+  ci-ok:
+    name: ci-ok
+    if: always()
+    needs: [jogo]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir resultado dos jobs
+        env:
+          RESULTADOS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "Resultados: $RESULTADOS"
+          for r in $RESULTADOS; do
+            if [ "$r" = "failure" ] || [ "$r" = "cancelled" ]; then
+              echo "::error::Algum job do CI falhou — merge bloqueado (PGC 5.2)."
+              exit 1
+            fi
+          done
+          echo "CI ok."

@@ -1,0 +1,16 @@
+:root { --fundo:#f4f6f8; --texto:#1f2933; --card:#fff; --x:#d6336c; --o:#1c7ed6; --vitoria:#d3f9d8; }
+@media (prefers-color-scheme: dark) {
+  :root { --fundo:#14181c; --texto:#e6e9ec; --card:#222a31; --x:#ff6b9d; --o:#74c0fc; --vitoria:#2b8a3e; }
+}
+* { box-sizing: border-box; }
+body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--fundo); color:var(--texto); font-family:system-ui,sans-serif; }
+.app { text-align:center; padding:1.5rem; }
+.status { font-size:1.2rem; min-height:1.8rem; }
+.tabuleiro { display:grid; grid-template-columns:repeat(3,minmax(0,6.5rem)); gap:.5rem; justify-content:center; margin:1rem 0; }
+.celula { aspect-ratio:1; font-size:2.6rem; font-weight:700; border:0; border-radius:.75rem; background:var(--card); color:var(--texto); cursor:pointer; box-shadow:0 1px 4px rgba(0,0,0,.2); }
+.celula:disabled { cursor:default; }
+.celula.x { color:var(--x); } .celula.o { color:var(--o); }
+.celula.vitoria { background:var(--vitoria); }
+.placar { display:flex; gap:1.5rem; justify-content:center; margin-bottom:1rem; }
+.botao { padding:.6rem 1.4rem; font-size:1rem; border:0; border-radius:.5rem; background:var(--o); color:#fff; cursor:pointer; }
+.versao { opacity:.6; font-size:.8rem; }

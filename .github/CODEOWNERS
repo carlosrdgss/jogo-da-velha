@@ -1,0 +1,12 @@
+# Revisores automáticos por área (PGC 2 e 5.2).
+#
+# @carlosrdgss é o Desenvolvedor Líder (dono do repositório).
+# TODO (Aula 1, passo 3): depois de adicionar o par de revisão como colaborador,
+# acrescente o usuário dele ao final das linhas abaixo, ex.: "@carlosrdgss @usuario-do-par".
+# Vale a ÚLTIMA linha que casar com o arquivo.
+
+*                    @carlosrdgss
+/.github/            @carlosrdgss
+/scripts/            @carlosrdgss
+/docs/               @carlosrdgss
+package.json         @carlosrdgss

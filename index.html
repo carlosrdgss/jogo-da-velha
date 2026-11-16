@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="./src/estilo.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Jogo da Velha</h1>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <div id="tabuleiro" class="tabuleiro" role="grid" aria-label="Tabuleiro"></div>
+      <div class="placar" aria-label="Placar">
+        <span>X: <strong id="placar-X">0</strong></span>
+        <span>Empates: <strong id="placar-empate">0</strong></span>
+        <span>O: <strong id="placar-O">0</strong></span>
+      </div>
+      <button id="reiniciar" class="botao" type="button">Nova partida</button>
+      <p class="versao">v<span id="versao">dev</span></p>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
